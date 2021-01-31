@@ -1,6 +1,5 @@
 from os import system, name
 import platform
-import users
 import time
 import connect
 
