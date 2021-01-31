@@ -22,24 +22,18 @@ def clear():
         system('clear')
 
 
-# def search_user(usr):
-#     for user in users.db:
-#         if user == usr:
-#             print('[ERROR] username already taken')
-
-
 def register():
     print("===================REGISTER======================")
     usr = input("[choose username]: ")
-    connect.register_user(usr, '123') ######################### melhorar depois
-    # if users.db.get(usr):
-    #     clear()
-    #     print("===================REGISTER======================")
-    #     print('[SYSTEM] username already taken... try another')
-    #     time.sleep(2)
-    # else:
-    #     input("[choose password]: ")
-    # connect.register_user(usr, input("[choose password]: "))
+    if not connect.check_user(usr):
+        psw = input("[choose password]: ")
+        connect.register_user(usr, psw)
+    else:
+        clear()
+        print("=====================REGISTER=======================")
+        print('[SYSTEM] User already registered.')
+        time.sleep(2)
+        register()
 
 
 def login():
