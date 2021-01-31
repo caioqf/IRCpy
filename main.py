@@ -28,6 +28,13 @@ def register():
     if not connect.check_user(usr):
         psw = input("[choose password]: ")
         connect.register_user(usr, psw)
+        clear()
+        print("===================REGISTER======================")
+        print("[SYSTEM] Successfully registered. Please log in now.")
+        time.sleep(1)
+        print("[SYSTEM] Redirecting to log in...")
+        time.sleep(2)
+        login()
     else:
         clear()
         print("=====================REGISTER=======================")
@@ -45,6 +52,9 @@ def login():
         clear()
         print("=====================LOGIN=======================")
         print('[SYSTEM] Logged in')
+        time.sleep(1)
+        print('[SYSTEM] Welcome.')
+        print("======================MENU=======================")
     else:
         clear()
         print("=====================LOGIN=======================")
