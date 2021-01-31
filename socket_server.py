@@ -10,6 +10,10 @@ server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind(ADDR)
 
 
+def handle_client(conn, addr):
+    print(f"[SERVER] New connection from {addr}.")
+
+
 def start():
     server.listen()
     print(f"[SERVER] Listening {SERVER} on port {PORT}...")
