@@ -14,7 +14,6 @@ def call_menu():
     return command
 
 
-# função para limpar o terminal a depender de qual for o OS usado
 def clear():
     if platform.system() == "Windows":
         system('cls')
@@ -67,6 +66,7 @@ proceed = False
 while not proceed:
 
     returned = call_menu()
+    
     if returned == '$reg':
         proceed = True
         clear()
