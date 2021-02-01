@@ -1,9 +1,9 @@
 import socket
 import threading
 
-HEADER =64
-PORT = 6969
-SERVER = socket.gethostbyname(socket.gethostname())
+HEADER = 64
+PORT = 5001
+SERVER = '192.168.0.101'
 ADDR = (SERVER, PORT)
 FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DC"
@@ -26,7 +26,7 @@ def handle_client(conn, addr):
                 print(f"[ACTIVE CONNECTIONS]  {threading.activeCount() - 1}")
 
             print(f"{addr} {msg}")
-            conn.send("MSG RCVD".encode(FORMAT))
+            conn.send("OPA MIKAEL".encode(FORMAT))
     conn.close()
 
 
