@@ -22,5 +22,5 @@ def send(msg):
 
 
 connected = True
-while connected == True:
+while connected:
     send(input("[CLIENT] Type a message: "))

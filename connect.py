@@ -1,4 +1,8 @@
 import mysql.connector
+import _md5
+import sys
+
+sys.path.insert(0, '/the/folder/path/name-package/')
 
 mydb = mysql.connector.connect(
     host='localhost',
@@ -11,6 +15,7 @@ mycursor = mydb.cursor(buffered=True)
 
 def register_user(usr, psw):
     sql = "INSERT INTO irc_logins (usr, psw) VALUES (%s, %s)"
+
     val = (usr, psw)
     mycursor.execute(sql, val)
     mydb.commit()

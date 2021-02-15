@@ -26,7 +26,6 @@ def handle_client(conn, addr):
                 print(f"[ACTIVE CONNECTIONS]  {threading.activeCount() - 1}")
 
             print(f"{addr} {msg}")
-            conn.send("OPA MIKAEL".encode(FORMAT))
     conn.close()
 
 
